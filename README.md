@@ -1,29 +1,36 @@
-<<<<<<< HEAD
-Book API - Express JS
+# Dokumentasi Book API (Express JS)
 
-1. Tujuan Project
-
-Project ini bertujuan untuk membuat REST API sederhana untuk mengelola data buku menggunakan Express JS.
-Fitur utama:
-- Mengambil daftar semua buku
-- Mengambil detail buku berdasarkan ID
-- Menambah buku baru
-- Mengupdate data buku
-- Menghapus buku
+Base URL server (default): `http://localhost:3000`  
+Prefix resource buku: `/books`
 
 ---
 
-2. Struktur Folder & File
+## 1. Dokumentasi Fungsi Controller (`bookController.js`)
 
-```bash
-express-book-api/
-├── app.js             
-├── package.json
-├── /controllers
-│   └── bookController.js 
-└── /routes
-    └── bookRoutes.js 
-=======
-# project-express
-untuk menyelesaikan tugas Express (Controller, Query, Routing)
->>>>>>> 07091c7aa822e9abd6c5163f18f9f46c6f1d4b15
+### 1.1. `getAllBooks(req, res)`
+
+**Fungsi:**
+Mengambil daftar semua buku.  
+Mendukung filter berdasarkan `author` melalui query string.
+
+**Alur logika:**
+- Baca `author` dari `req.query`.
+- Jika `author` ada:
+  - Filter array `books` hanya yang `book.author.toLowerCase() === author.toLowerCase()`.
+  - Kembalikan JSON berisi pesan dan data buku hasil filter.
+- Jika `author` tidak ada:
+  - Kembalikan JSON berisi pesan dan semua data buku (`books`).
+
+**Response berhasil (200):**
+```json
+{
+  "message": "Daftar semua buku",
+  "data": [
+    {
+      "id": 1,
+      "title": "Laskar Pelangi",
+      "author": "Andrea Hirata",
+      "year": 2005
+    }
+  ]
+}
