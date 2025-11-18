@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Book API - Express JS
 
 1. Tujuan Project
@@ -22,3 +23,7 @@ express-book-api/
 │   └── bookController.js 
 └── /routes
     └── bookRoutes.js 
+=======
+# project-express
+untuk menyelesaikan tugas Express (Controller, Query, Routing)
+>>>>>>> 07091c7aa822e9abd6c5163f18f9f46c6f1d4b15
